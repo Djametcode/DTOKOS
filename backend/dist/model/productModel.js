@@ -9,32 +9,34 @@ const { Schema } = mongoose_1.default;
 const productSchema = new Schema({
     productName: {
         type: String,
-        required: [true, "please provide product name"]
+        required: [true, "please provide product name"],
     },
     price: {
         type: Number,
-        required: [true, "please provide price"]
+        required: [true, "please provide price"],
     },
     stock: {
         type: Number,
-        default: 1
+        default: 1,
     },
     image: {
         type: String,
-        required: [true, "please provide product image"]
+        required: [true, "please provide product image"],
     },
     description: {
         type: String,
-        required: [true, "please provide your product description"]
+        required: [true, "please provide your product description"],
     },
-    rating: [{
+    rating: [
+        {
             ratingId: {
-                type: Schema.Types.ObjectId
-            }
-        }],
+                type: Schema.Types.ObjectId,
+            },
+        },
+    ],
     totalSold: {
         type: Number,
-        default: 0
-    }
+        default: 0,
+    },
 });
 exports.productModel = mongoose_1.default.model("Product", productSchema);

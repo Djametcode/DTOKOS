@@ -9,29 +9,31 @@ const { Schema } = mongoose_1.default;
 const userSchema = new Schema({
     username: {
         type: String,
-        required: [true, "please provide username"]
+        required: [true, "please provide username"],
     },
     email: {
         type: String,
-        required: [true, "please provide email"]
+        required: [true, "please provide email"],
     },
     password: {
         type: String,
-        required: [true, "please provide password"]
+        required: [true, "please provide password"],
     },
     balance: {
         type: Number,
-        default: 0
+        default: 0,
     },
     avatar: {
         type: String,
-        default: ""
+        default: "",
     },
-    cart: [{
+    cart: [
+        {
             cartId: {
                 type: Schema.Types.ObjectId,
-                ref: "Cart"
-            }
-        }]
+                ref: "Cart",
+            },
+        },
+    ],
 });
 exports.userModel = mongoose_1.default.model("User", userSchema);
