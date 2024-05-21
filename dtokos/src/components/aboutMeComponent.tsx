@@ -4,10 +4,12 @@ import Link from "next/link";
 
 export default function AboutMeComponent() {
   return (
-    <div className=" flex justify-around pt-12 font-sora h-[400px] w-full bg-black text-white">
+    <div className=" flex max-sm:flex-col max-sm:gap-8 justify-around max-sm:pt-16 pt-12 font-sora h-[700px] max-sm:h-full w-full bg-black text-white max-sm:p-3">
       <div>
-        <h1 className=" text-4xl">DTOKOS</h1>
-        <p className=" text-sm mt-6">Explore more about our product</p>
+        <h1 className=" text-4xl max-sm:text-xl">DTOKOS</h1>
+        <p className=" text-sm max-sm:text-xs mt-6">
+          Explore more about our product
+        </p>
         <div className=" flex mt-3 gap-3">
           <FaInstagram size={25} />
           <FaFacebookF size={25} />
@@ -15,8 +17,8 @@ export default function AboutMeComponent() {
       </div>
       <div>
         <div>
-          <h1 className=" text-xl">Company Info</h1>
-          <div className=" flex flex-col gap-2 mt-6 text-sm">
+          <h1 className=" text-xl max-sm:text-xl">Company Info</h1>
+          <div className=" flex flex-col gap-2 mt-6 text-sm max-sm:text-xs">
             <Link href={"/"}>Home</Link>
             <Link href={"/"}>About</Link>
             <Link href={"/"}>Product</Link>
@@ -27,7 +29,7 @@ export default function AboutMeComponent() {
       <div>
         <div>
           <h1 className=" text-xl">Store Policies</h1>
-          <div className=" flex flex-col gap-2 mt-6 text-sm">
+          <div className=" flex flex-col gap-2 mt-6 text-sm max-sm:text-xs">
             <Link href={"/"}>FAQ</Link>
             <Link href={"/"}>Privacy Policy</Link>
             <Link href={"/"}>Terms of use</Link>

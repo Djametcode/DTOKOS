@@ -16,11 +16,11 @@ export default function Home() {
       <div className=" fixed top-0 w-full z-30">
         <HeaderComponent />
       </div>
-      <div className=" m-20 flex relative z-20 mt-[200px]">
+      <div className=" m-20 flex max-sm:m-3 max-sm:flex-col max-sm:gap-10 max-sm:mt-[100px] max-sm:h-screen relative z-20 mt-[200px]">
         <div className=" basis-1/2 h-[900px]">
           <IntroduceComponent />
         </div>
-        <div className=" basis-1/2 h-[725px] flex items-center justify-center bg-slate-100 rounded-3xl">
+        <div className=" basis-1/2 h-[725px] flex items-center justify-center bg-slate-100 rounded-3xl max-sm:hidden">
           <CarouselComponent />
         </div>
       </div>

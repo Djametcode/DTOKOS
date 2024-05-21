@@ -40,9 +40,9 @@ export default function FeaturedProductComponent() {
     },
   ];
   return (
-    <div className=" h-[800px] w-full font-sora">
+    <div className=" h-[800px] max-sm:h-full w-full font-sora">
       <h1 className=" text-center text-3xl">Top Selling Product</h1>
-      <div className=" flex gap-5 mt-36 w-full justify-around">
+      <div className=" flex max-sm:flex-col gap-5 max-sm:gap-10 mt-36 w-full max-sm:justify-center max-sm:items-center justify-around">
         {mockData.map((item) => {
           return (
             <div className=" shadow relative text-justify w-[300px] h-[400px] flex flex-col gap-3 bg-slate-50 rounded-tr-xl rounded-tl-xl rounded-br-xl rounded-bl-xl">

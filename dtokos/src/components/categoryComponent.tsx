@@ -3,7 +3,7 @@ export default function CategoryComponent() {
   return (
     <div className=" w-full h-[800px] font-sora">
       <h1 className=" text-center text-3xl">Category</h1>
-      <div className=" grid grid-cols-4 place-content-around mt-24">
+      <div className=" grid grid-cols-4 max-sm:grid-cols-2 max-sm:gap-y-10 place-content-around mt-24">
         <div className=" flex flex-col items-center justify-center gap-5">
           <div className=" w-[85x] h-[85px] bg-slate-200 p-5 rounded-2xl">
             <img className=" w-full h-full" src="/tshirt.png" alt="shirt" />

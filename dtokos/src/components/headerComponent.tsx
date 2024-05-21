@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { FaSearch } from "react-icons/fa";
 import { AiOutlineShopping, AiOutlineUser } from "react-icons/ai";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 export default function HeaderComponent() {
   return (
-    <div className=" font-sora flex h-[120px] bg-slate-100 w-screen justify-evenly items-center">
-      <h1 className=" text-2xl">DTOKOS</h1>
-      <div className=" flex gap-14 items-center justify-between">
+    <div className=" font-sora flex h-[120px] max-sm:h-[85px] bg-slate-100 w-screen justify-evenly max-sm:justify-start items-center max-sm:relative">
+      <h1 className=" text-2xl max-sm:text-xl max-sm:pl-5">DTOKOS</h1>
+      <div className=" flex gap-14 items-center justify-between max-sm:hidden">
         <div className=" flex gap-11 items-center justify-between">
           <Link href={"/"}>Home</Link>
           <Link href={"/"}>About</Link>
@@ -24,9 +25,12 @@ export default function HeaderComponent() {
           </div>
         </div>
       </div>
-      <div className=" flex gap-3">
+      <div className=" flex gap-3 max-sm:hidden">
         <AiOutlineUser size={28} />
         <AiOutlineShopping size={28} />
+      </div>
+      <div className=" md:hidden absolute right-5">
+        <GiHamburgerMenu size={25} />
       </div>
     </div>
   );
