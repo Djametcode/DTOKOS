@@ -2,7 +2,12 @@ import mongoose, { Types } from "mongoose";
 const { Schema } = mongoose;
 
 interface Icart {
-  cartId: Types.ObjectId;
+  productId: Types.ObjectId;
+  quantity: number;
+}
+
+interface Istore {
+  storeId: Types.ObjectId
 }
 
 interface Iuser {
@@ -12,6 +17,7 @@ interface Iuser {
   balance: number;
   avatar: string;
   cart: Icart[];
+  ownStore: Istore[]
 }
 
 const userSchema = new Schema<Iuser>({
@@ -37,12 +43,22 @@ const userSchema = new Schema<Iuser>({
   },
   cart: [
     {
-      cartId: {
+      productId: {
         type: Schema.Types.ObjectId,
-        ref: "Cart",
+        ref: "Product"
       },
+      quantity: {
+        type: Number,
+        default: 1,
+      }
     },
   ],
+  ownStore: [{
+    storeId: {
+      type: Schema.Types.ObjectId,
+      ref: "Store"
+    }
+  }]
 });
 
 export const userModel = mongoose.model("User", userSchema);

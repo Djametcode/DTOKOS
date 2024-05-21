@@ -1,11 +1,11 @@
 import mongoose, { Types, mongo } from "mongoose";
 const { Schema } = mongoose;
 
-interface Irating {
+export interface Irating {
   ratingId: Types.ObjectId;
 }
 
-interface Iproduct {
+export interface Iproduct {
   productName: string;
   price: number;
   stock: number;
@@ -13,6 +13,8 @@ interface Iproduct {
   description: string;
   rating: Irating[];
   totalSold: number;
+  storeId: Types.ObjectId;
+  createdBy: Types.ObjectId;
 }
 
 const productSchema = new Schema<Iproduct>({
@@ -47,6 +49,14 @@ const productSchema = new Schema<Iproduct>({
     type: Number,
     default: 0,
   },
+  storeId: {
+    type: Schema.Types.ObjectId,
+    ref: "Store"
+  },
+  createdBy: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  }
 });
 
 export const productModel = mongoose.model("Product", productSchema);

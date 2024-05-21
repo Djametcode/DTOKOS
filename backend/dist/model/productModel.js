@@ -38,5 +38,13 @@ const productSchema = new Schema({
         type: Number,
         default: 0,
     },
+    storeId: {
+        type: Schema.Types.ObjectId,
+        ref: "Store"
+    },
+    createdBy: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    }
 });
 exports.productModel = mongoose_1.default.model("Product", productSchema);

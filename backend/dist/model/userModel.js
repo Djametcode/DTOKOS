@@ -29,11 +29,21 @@ const userSchema = new Schema({
     },
     cart: [
         {
-            cartId: {
+            productId: {
                 type: Schema.Types.ObjectId,
-                ref: "Cart",
+                ref: "Product"
             },
+            quantity: {
+                type: Number,
+                default: 1,
+            }
         },
     ],
+    ownStore: [{
+            storeId: {
+                type: Schema.Types.ObjectId,
+                ref: "Store"
+            }
+        }]
 });
 exports.userModel = mongoose_1.default.model("User", userSchema);
