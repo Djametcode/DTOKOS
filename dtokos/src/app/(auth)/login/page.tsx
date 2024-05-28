@@ -4,8 +4,8 @@ import { FaApple, FaFacebook, FaGoogle, FaInstagram } from "react-icons/fa";
 
 export default function LoginComponent() {
   return (
-    <div className=" ml-[200px] mr-[200px] mt-[75px] rounded-lg bg-slate-50 rounded-tl-4xl flex">
-      <div className=" font-sora flex flex-col items-center justify-center pb-16 pt-16 basis-1/2 h-[700px] rounded-3xl bg-slate-100">
+    <div className=" ml-[200px] max-sm:mr-0 max-sm:ml-0 mr-[200px] max-sm:mt-0 mt-[75px] rounded-lg bg-slate-50 rounded-tl-4xl flex max-sm:flex-col">
+      <div className=" max-sm:p-6 font-sora flex flex-col items-center justify-center pb-16 pt-16 basis-1/2 h-[700px] rounded-3xl bg-slate-100">
         <div className=" text-center mt-7">
           <h2 className=" text-4xl">Welcome back</h2>
           <p className=" font-extralight text-xs mt-2">
@@ -36,7 +36,7 @@ export default function LoginComponent() {
           <p className=" text-sm">Or</p>
           <hr className=" w-full text-black" />
         </div>
-        <div className=" w-[400px] mt-9 flex flex-col gap-5">
+        <div className=" w-[400px] mt-9 flex flex-col gap-5 max-sm:p-6">
           <div className=" flex flex-col items-start gap-2">
             <label htmlFor="email">Email</label>
             <input
@@ -55,7 +55,7 @@ export default function LoginComponent() {
           </div>
         </div>
         <div>
-          <div className=" w-[400px] bg-black text-white flex items-center justify-center rounded-3xl h-[50px] mt-9">
+          <div className=" max-sm:m-6 w-[400px] bg-black text-white flex items-center justify-center rounded-3xl h-[50px] mt-9">
             <button>sign in</button>
           </div>
           <div className=" mt-10 text-center">
@@ -63,7 +63,7 @@ export default function LoginComponent() {
           </div>
         </div>
       </div>
-      <div className=" basis-1/2">
+      <div className=" basis-1/2 max-sm:hidden">
         <CarouselTwoComponent />
       </div>
     </div>
