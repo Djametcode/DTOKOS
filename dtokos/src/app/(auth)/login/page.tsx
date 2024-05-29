@@ -5,10 +5,13 @@ import axios from "axios";
 import Link from "next/link";
 import React, { useState } from "react";
 import { FaApple, FaFacebook, FaGoogle, FaInstagram } from "react-icons/fa";
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 
 export default function LoginComponent() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const router = useRouter();
 
   const data = {
     email: email,
@@ -37,10 +40,14 @@ export default function LoginComponent() {
         "http://localhost:3000/api/v19/dtokos/login",
         data
       );
-      const result = response.data;
+      const result: { token: string } = response.data;
+      const { token } = result;
       console.log(result);
+      Cookies.set("token", token);
+      router.push("/landing");
     } catch (error) {
       console.log(error);
+      router.push("/login");
     }
   };
 
