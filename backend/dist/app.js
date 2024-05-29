@@ -27,9 +27,7 @@ cloudinary_1.v2.config({
     api_secret: process.env.API_SECRET,
     cloud_name: process.env.CLOUD_NAME
 });
-app.use((0, cors_1.default)({
-    origin: ["*"]
-}));
+app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use('/api/v19/dtokos', authRouter_1.authRouter);
