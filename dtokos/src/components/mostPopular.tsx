@@ -47,7 +47,7 @@ export default function MostPopularComponent() {
         <h1 className=" font-sora">Most popular</h1>
         <h2 className=" text-sm text-blue-600">view more</h2>
       </div>
-      <div className=" grid grid-cols-2 gap-5 mt-3 h-full w-full gap-y-5">
+      <div className=" grid grid-cols-2 gap-6 mt-3 h-full w-full gap-y-5">
         {product.map((item) => {
           return (
             <>

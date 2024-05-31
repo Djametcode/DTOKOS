@@ -5,7 +5,7 @@ import { IoSearchOutline } from "react-icons/io5";
 
 export default function LandingHeaderComponent() {
   return (
-    <div className=" flex justify-between items-center bg-stone-300 h-[70px] p-5 sticky top-0 w-full">
+    <div className=" flex justify-between items-center bg-stone-300 h-[70px] p-5 fixed top-0 w-full">
       <div className=" font-sora">
         <h1 className=" text-xl">DTOKOS</h1>
       </div>
