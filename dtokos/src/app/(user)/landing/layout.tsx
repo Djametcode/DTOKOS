@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import HeaderComponent from "@/components/headerComponent";
 import LandingHeaderComponent from "@/components/landingHeader";
 import LandingUserComponent from "@/components/landingUser";
+import NavbarLanding from "@/components/navbarLanding";
 
 export default function LandingLayout({
   children,
@@ -12,10 +13,10 @@ export default function LandingLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className=" w-screen">
+    <div className=" w-screen h-[1200px] bg-stone-300">
       <LandingHeaderComponent />
-      <LandingUserComponent />
       {children}
+      <NavbarLanding />
     </div>
   );
 }
