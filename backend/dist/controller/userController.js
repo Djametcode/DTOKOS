@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getMyStore = exports.removeProductFromCart = exports.addProductToCart = exports.deleteStore = exports.createStore = exports.loginUser = exports.registerUser = void 0;
+exports.getMyStore = exports.removeProductFromCart = exports.addProductToCart = exports.deleteStore = exports.createStore = exports.loginUser = exports.registerUser = exports.getCurrentUser = void 0;
 const userModel_1 = require("../model/userModel");
 const hashPassword_1 = require("../utils/hashPassword");
 const comparePass_1 = require("../utils/comparePass");
@@ -17,6 +17,18 @@ const tokenGenerator_1 = require("../utils/tokenGenerator");
 const storeModel_1 = require("../model/storeModel");
 const cloudinary_1 = require("cloudinary");
 const productModel_1 = require("../model/productModel");
+const getCurrentUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const userId = req.user.userId;
+    try {
+        const user = yield userModel_1.userModel.findOne({ _id: userId });
+        return res.status(200).json({ msg: "success", user });
+    }
+    catch (error) {
+        console.log(error);
+        return res.status(501).json({ msg: "internal server error" });
+    }
+});
+exports.getCurrentUser = getCurrentUser;
 const registerUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { username, email, password } = req.body;
     const requiredFileds = ["username", "email", "password"];

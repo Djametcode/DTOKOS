@@ -7,6 +7,19 @@ import { storeModel } from "../model/storeModel";
 import { v2 as cloudinary } from 'cloudinary'
 import { productModel } from "../model/productModel";
 
+export const getCurrentUser = async (req: Request, res: Response) => {
+  const userId = req.user.userId;
+
+  try {
+    const user = await userModel.findOne({ _id: userId })
+
+    return res.status(200).json({ msg: "success", user })
+  } catch (error) {
+    console.log(error)
+    return res.status(501).json({ msg: "internal server error" })
+  }
+}
+
 export const registerUser = async (req: Request, res: Response) => {
   const { username, email, password } = req.body;
 

@@ -10,4 +10,5 @@ const userController_1 = require("../controller/userController");
 const router = express_1.default.Router();
 router.post("/add-to-cart/:id", userAuthMiddleware_1.userAuthMiddleware, userController_1.addProductToCart);
 router.post("/remove-from-cart/:id", userAuthMiddleware_1.userAuthMiddleware, userController_1.removeProductFromCart);
+router.get("/current-user", userAuthMiddleware_1.userAuthMiddleware, userController_1.getCurrentUser);
 exports.userRouter = router;

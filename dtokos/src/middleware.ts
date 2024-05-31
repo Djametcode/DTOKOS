@@ -1,16 +1,18 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
+import type { NextRequest } from 'next/server'
 
 export function middleware(request: NextRequest) {
-    let cookies = request.cookies.get("token")
-    console.log(cookies)
-    let second = request.cookies.getAll()
-    console.log(second)
 
     const test = request.cookies.has("token")
     console.log(test)
 
+    if (!test) {
+        return NextResponse.redirect(new URL("/login", request.url))
+    }
+
+    return NextResponse.next()
 }
 
 export const config = {
-    matcher: "/landing"
+    matcher: ["/landing"]
 }
