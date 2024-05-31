@@ -23,7 +23,7 @@ export default function MostPopularComponent() {
   const getAllProduct = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/api/v19/dtokos/prod/get-all-product",
+        "https://dtokos-backend.vercel.app/api/v19/dtokos/prod/get-all-product",
         {
           headers: {
             Authorization: `Bearer ${Cookies.get("token")}`,

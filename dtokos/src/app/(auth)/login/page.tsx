@@ -37,7 +37,7 @@ export default function LoginComponent() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v19/dtokos/login",
+        "https://dtokos-backend.vercel.app/api/v19/dtokos/login",
         data
       );
       const result: { token: string } = response.data;
