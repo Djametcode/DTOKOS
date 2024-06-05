@@ -6,7 +6,7 @@ import { HiLocationMarker } from "react-icons/hi";
 
 export default function LandingComponent() {
   return (
-    <div className=" w-full h-full">
+    <div className=" w-full h-[1200px]">
       <div className=" max-h-[60px] p-3 mt-[70px]">
         <div className=" bg-white p-2 h-[60px] w-full rounded-3xl flex justify-between gap-3 items-center">
           <div className=" flex h-full gap-3">
