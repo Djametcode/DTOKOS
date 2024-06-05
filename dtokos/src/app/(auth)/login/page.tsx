@@ -7,11 +7,13 @@ import React, { useState } from "react";
 import { FaApple, FaFacebook, FaGoogle, FaInstagram } from "react-icons/fa";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
+import { PulseLoader } from "react-spinners";
 
 export default function LoginComponent() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const router = useRouter();
+  const [isLoging, setIsLogginin] = useState<boolean>(false);
 
   const data = {
     email: email,
@@ -36,6 +38,7 @@ export default function LoginComponent() {
   const loginHandler = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+      setIsLogginin(true);
       const response = await axios.post(
         "https://dtokos-backend.vercel.app/api/v19/dtokos/login",
         data
@@ -44,6 +47,7 @@ export default function LoginComponent() {
       const { token } = result;
       console.log(result);
       Cookies.set("token", token);
+      setIsLogginin(false);
       router.push("/landing");
     } catch (error) {
       console.log(error);
@@ -110,7 +114,11 @@ export default function LoginComponent() {
         </div>
         <div>
           <div className=" max-sm:m-6 w-[400px] bg-black text-white flex items-center justify-center rounded-3xl h-[50px] mt-9">
-            <button onClick={loginHandler}>sign in</button>
+            {isLoging ? (
+              <PulseLoader color="white" size={10} />
+            ) : (
+              <button onClick={loginHandler}>sign in</button>
+            )}
           </div>
           <div className=" mt-10 text-center">
             <p className=" underline text-sm">forgot password</p>

@@ -1,9 +1,16 @@
+"use client";
+
 import CarouselComponent from "@/components/carouselComponent";
 import CarouselTwoComponent from "@/components/carouselTwoComponent";
 import Link from "next/link";
+import { useState } from "react";
 import { FaApple, FaFacebook, FaGoogle, FaInstagram } from "react-icons/fa";
 
 export default function RegisterComponent() {
+  const [username, setUsername] = useState<String | null>(null);
+  const [email, setEmail] = useState<String | null>(null);
+  const [password, setPassword] = useState<String | null>(null);
+
   return (
     <div className=" ml-[200px] mr-[200px] mt-[75px] rounded-lg bg-slate-50 rounded-tl-4xl flex">
       <div className=" font-sora flex flex-col items-center justify-center pb-16 pt-16 basis-1/2 h-[700px] rounded-3xl bg-slate-100">

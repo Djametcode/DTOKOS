@@ -19,7 +19,7 @@ export default function LandingUserComponent() {
   const getCurrentUser = async () => {
     try {
       const response = await axios.get(
-        "https://dtokos-backend.vercel.app/api/v19/dtokos/user/current-user",
+        "http://localhost:3000/api/v19/dtokos/user/current-user",
         {
           headers: {
             Authorization: `Bearer ${Cookies.get("token")}`,
